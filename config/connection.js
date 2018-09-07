@@ -1,7 +1,6 @@
 // connections information
 require("dotenv").config();
 const dbLogin = require("../login.js");
-//console.log(dbLogin);
 
 // Set up MySQL connection.
 const mysql = require("mysql");
