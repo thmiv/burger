@@ -11,7 +11,7 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
+    //console.log(hbsObject); // for testing
     res.render("index", hbsObject);
   });
 });
@@ -24,9 +24,9 @@ router.post("/api/burgers", function(req, res) {
 });
 
 router.put("/api/burgers/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+  var condition = "id=" + req.params.id;
 
-  console.log("condition", condition);
+  console.log("put condition", condition); // for testing
 
   burg.update({
     burger_eaten: req.body.burger_eaten
@@ -41,7 +41,9 @@ router.put("/api/burgers/:id", function(req, res) {
 });
 
 router.delete("/api/burgers/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+  var condition = "id=" + req.params.id;
+
+  console.log("del condition", condition); // for testing
 
   burg.delete(condition, function(result) {
     if (result.affectedRows == 0) {
